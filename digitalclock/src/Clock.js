@@ -1,7 +1,12 @@
-import React from 'react'
+import React ,{ useState } from 'react'
 
 export default function Clock(){
-    let time = new Date().toLocaleTimeString();
+    const [time, setTime] = useState(new Date().toLocaleTimeString());
+
+    function updateTime(){
+        setTime(new Date().toLocaleTimeString())
+    }
+    setInterval(updateTime , 1000);
     return(
         <>
             <h1>{time}</h1>
